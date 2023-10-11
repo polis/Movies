@@ -9,9 +9,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
+import dagger.hilt.android.AndroidEntryPoint
 import polis.app.movies.ui.navigation.MainNavigation
 import polis.app.movies.ui.theme.MoviesTheme
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     private val mainViewModel: MainViewModel by viewModels()
@@ -27,7 +29,6 @@ class MainActivity : ComponentActivity() {
                 ) {
                     val navController = rememberNavController()
                     MainNavigation(
-                        activity = this,
                         navController = navController,
                         mainViewModel = mainViewModel
                     )
